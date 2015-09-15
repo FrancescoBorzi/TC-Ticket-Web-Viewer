@@ -1,0 +1,9 @@
+.alliance td {
+  color: #1A67F4;
+}
+
+.horde td {
+  color: #CD0A0E;
+}
+
+
