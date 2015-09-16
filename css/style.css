@@ -3,3 +3,17 @@ thead th {
   padding-bottom: 8px !important;
   vertical-align: top !important;
 }
+
+td { vertical-align: middle !important; }
+
+figure { margin: 1em 40px !important; }
+
+.circle {
+  display: block;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+}
+
+.circle-on  { background: radial-gradient(circle at 5px 5px, #00FF40, #000); }
+.circle-off { background: radial-gradient(circle at 5px 5px, grey, #000); }
