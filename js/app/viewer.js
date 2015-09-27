@@ -9,7 +9,7 @@
 
     $scope.serverName = app.serverName;
 
-    var request = app.api + "search/tickets?closedBy=0";
+    var request = app.api + "search/tickets?unresolved=1";
 
     $http.get( request )
       .success(function(data, status, header, config) {
