@@ -23,7 +23,7 @@
     })
       .error(function(data, status, header, config) {
       $scope.apiLoaded = false;
-      console.log("Error while retrieving tickets, API request failed: " + app.api + "search/tickets?closedBy=0");
+      console.log("Error while retrieving tickets, API request failed: " + app.api + "search/tickets?unresolved=1");
     });
 
   });
