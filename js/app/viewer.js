@@ -10,11 +10,11 @@
     $scope.serverName = app.serverName;
 
     var request = app.api + "search/tickets?unresolved=1";
+    $scope.apiLoaded = true;
 
     $http.get( request )
       .success(function(data, status, header, config) {
 
-      $scope.apiLoaded = true;
       $scope.ticketsCount = data.length;
 
       if ($scope.ticketsCount > 0) {
