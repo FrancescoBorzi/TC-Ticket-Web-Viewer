@@ -51,8 +51,8 @@
                 <td class="text-danger"><strong>{{ ticket.id }}</strong></td>
                 <td class="text-info"><strong>{{ ticket.name }}</strong></td>
                 <td>{{ ticket.description }}</td>
-                <td class="text-success">{{ ticket.createTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
-                <td class="text-success">{{ ticket.lastModifiedTime | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                <td class="text-success">{{ ticket.createTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                <td class="text-success">{{ ticket.lastModifiedTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
                 <td class="text-muted">{{ ticket.comment }}</td>
                 <td><figure ng-show="ticket.online == 1" class="circle circle-on"></figure><figure ng-show="ticket.online == 0" class="circle circle-off"></figure></td>
               </tr>
