@@ -36,28 +36,30 @@
           <p class="lead h4">There are <strong class="text-danger">{{ ticketsCount }}</strong> open tickets</p>
           <p>To resolve a ticket including a response, type in game <span class="text-info">.ticket complete #ID <i>response</i></span></p>
           <br>
-          <table class="table table-striped table-bordered" ts-wrapper>
-            <thead class="text-warning">
-              <th class="text-center" ts-criteria="id|parseInt" ts-default="ascending">#ID</th>
-              <th class="text-center" ts-criteria="name|lowercase">Character</th>
-              <th class="text-center" ts-criteria="description|lowercase">Description</th>
-              <th class="text-center" ts-criteria="createTime|parseInt">Create Time</th>
-              <th class="text-center" ts-criteria="lastModifiedTime|parseInt">Last Modified Time</th>
-              <th class="text-center" ts-criteria="comment|lowercase">Comment</th>
-              <th class="text-center" ts-criteria="online|lowercase">Online</th>
-            </thead>
-            <tbody>
-              <tr ng-repeat="ticket in tickets" ng-class="ticket.faction" ts-repeat>
-                <td class="text-danger"><strong>{{ ticket.id }}</strong></td>
-                <td class="text-info"><strong>{{ ticket.name }}</strong></td>
-                <td>{{ ticket.description }}</td>
-                <td class="text-success">{{ ticket.createTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
-                <td class="text-success">{{ ticket.lastModifiedTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
-                <td class="text-muted">{{ ticket.comment }}</td>
-                <td><figure ng-show="ticket.online == 1" class="circle circle-on"></figure><figure ng-show="ticket.online == 0" class="circle circle-off"></figure></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered" ts-wrapper>
+              <thead class="text-warning">
+                <th class="text-center" ts-criteria="id|parseInt" ts-default="ascending">#ID</th>
+                <th class="text-center" ts-criteria="name|lowercase">Character</th>
+                <th class="text-center" ts-criteria="description|lowercase">Description</th>
+                <th class="text-center" ts-criteria="createTime|parseInt">Create Time</th>
+                <th class="text-center" ts-criteria="lastModifiedTime|parseInt">Last Modified Time</th>
+                <th class="text-center" ts-criteria="comment|lowercase">Comment</th>
+                <th class="text-center" ts-criteria="online|lowercase">Online</th>
+              </thead>
+              <tbody>
+                <tr ng-repeat="ticket in tickets" ng-class="ticket.faction" ts-repeat>
+                  <td class="text-danger"><strong>{{ ticket.id }}</strong></td>
+                  <td class="text-info"><strong>{{ ticket.name }}</strong></td>
+                  <td>{{ ticket.description }}</td>
+                  <td class="text-success">{{ ticket.createTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                  <td class="text-success">{{ ticket.lastModifiedTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                  <td class="text-muted">{{ ticket.comment }}</td>
+                  <td><figure ng-show="ticket.online == 1" class="circle circle-on"></figure><figure ng-show="ticket.online == 0" class="circle circle-off"></figure></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div ng-show="ticketsCount == 0">
           <p class="lead h4 text-primary">There are no open tickets.</p>
