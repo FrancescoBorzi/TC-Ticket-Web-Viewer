@@ -8,14 +8,47 @@
   app.controller("StatusController", function($scope, $http) {
 
     $scope.serverName = app.serverName;
+    $scope.monthDiff  = 0;
+    $scope.monthName  = "this month";
 
     var request1 = app.api + "search/tickets?unresolved=1",
         request2 = app.api + "topgm/ticket/account",
-        request3 = app.api + "topgm/ticket/character";
+        request3 = app.api + "topgm/ticket/character",
+        monthRequest = app.api + "topgm/ticket/account/month/",
+        getMonth;
 
     $scope.apiLoaded = true;
     $scope.showTopGMbyAccount   = false;
     $scope.showTopGMbyCharacter = false;
+
+    getMonth = function() {
+      $http.get( monthRequest + (-$scope.monthDiff) )
+        .success(function(data, status, header, config) {
+        $scope.month = data;
+      })
+        .error(function(data, status, header, config) {
+        console.log("Error while retrieving tickets, API request failed: " + monthRequest + (-$scope.monthDiff));
+      });
+    };
+
+    $scope.changeMonth = function(diff) {
+
+      if (diff + $scope.monthDiff > 0) { return; }
+
+      $scope.monthDiff += diff;
+      getMonth();
+
+      switch ( $scope.monthDiff ) {
+        case 0:
+          $scope.monthName  = "this month";
+          break;
+        case -1:
+          $scope.monthName  = "last month";
+          break;
+        default:
+          $scope.monthName  = -$scope.monthDiff + " months ago";
+      }
+    };
 
     $http.get( request1 )
       .success(function(data, status, header, config) {
@@ -43,6 +76,9 @@
         .error(function(data, status, header, config) {
         console.log("Error while retrieving tickets, API request failed: " + request3);
       });
+
+      getMonth();
+
     })
       .error(function(data, status, header, config) {
       $scope.apiLoaded = false;
