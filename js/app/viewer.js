@@ -85,6 +85,12 @@
       console.log("Error while retrieving tickets, API request failed: " + request1);
     });
 
+
+    // Toggle score divs
+    $scope.toggleTopGMbyAccount   = true;
+    $scope.toggleTopGMbyCharacter = true;
+    $scope.toggleTopAccountMonth  = true;
+
   });
 
 }());

@@ -68,50 +68,59 @@
         <div class="row">
           <div class="col-md-4" ng-show="showTopGMbyCharacter">
             <p class="h4">Top GM by Character</p>
-            <table class="table table-striped table-bordered">
-              <thead>
-                <th class="text-center">Character</th>
-                <th class="text-center">Account</th>
-                <th class="text-center">Resolved Ticket</th>
-              </thead>
-              <tbody>
-                <tr ng-repeat="gm in topGMbyCharacter">
-                  <td><strong>{{ gm.name }}</strong></td>
-                  <td><strong>{{ gm.account }}</strong></td>
-                  <td><strong>{{ gm.count }}</strong></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-container" ng-class="{'limit-height': toggleTopGMbyCharacter}">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <th class="text-center">Character</th>
+                  <th class="text-center">Account</th>
+                  <th class="text-center">Resolved Ticket</th>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="gm in topGMbyCharacter">
+                    <td><strong>{{ gm.name }}</strong></td>
+                    <td><strong>{{ gm.account }}</strong></td>
+                    <td><strong>{{ gm.count }}</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button type="button" class="btn btn-default btn-xs" style="cursor: pointer;" ng-click="toggleTopGMbyCharacter = !toggleTopGMbyCharacter">Toggle</button>
           </div>
           <div class="col-md-4" ng-show="showTopGMbyAccount">
             <p class="h4">Top GM by Account</p>
-            <table class="table table-striped table-bordered">
-              <thead>
-                <th class="text-center">Account</th>
-                <th class="text-center">Resolved Ticket</th>
-              </thead>
-              <tbody>
-                <tr ng-repeat="gm in topGMbyAccount">
-                  <td><strong>{{ gm.account }}</strong></td>
-                  <td><strong>{{ gm.count }}</strong></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-container" ng-class="{'limit-height': toggleTopGMbyAccount}">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <th class="text-center">Account</th>
+                  <th class="text-center">Resolved Ticket</th>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="gm in topGMbyAccount">
+                    <td><strong>{{ gm.account }}</strong></td>
+                    <td><strong>{{ gm.count }}</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button type="button" class="btn btn-default btn-xs" style="cursor: pointer;" ng-click="toggleTopGMbyAccount = !toggleTopGMbyAccount">Toggle</button>
           </div>
           <div class="col-md-4" ng-show="showTopGMbyAccount">
             <p class="h4"><span ng-click="changeMonth(-1)" class="glyphicon glyphicon-triangle-left" style="cursor: pointer;" aria-hidden="true"></span> Top Account {{ monthName }} <span ng-show="monthDiff < 0" ng-click="changeMonth(1)" class="glyphicon glyphicon-triangle-right" style="cursor: pointer;" aria-hidden="true"></span></p>
-            <table class="table table-striped table-bordered">
-              <thead>
-                <th class="text-center">Account</th>
-                <th class="text-center">Resolved Ticket</th>
-              </thead>
-              <tbody>
-                <tr ng-repeat="gm in month">
-                  <td><strong>{{ gm.account }}</strong></td>
-                  <td><strong>{{ gm.count }}</strong></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-container" ng-class="{'limit-height': toggleTopAccountMonth}">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <th class="text-center">Account</th>
+                  <th class="text-center">Resolved Ticket</th>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="gm in month">
+                    <td><strong>{{ gm.account }}</strong></td>
+                    <td><strong>{{ gm.count }}</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button type="button" class="btn btn-default btn-xs" style="cursor: pointer;" ng-click="toggleTopAccountMonth = !toggleTopAccountMonth">Toggle</button>
           </div>
         </div>
 
