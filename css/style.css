@@ -1,4 +1,24 @@
-.table-container {
+figure { margin: 1em 40px !important; }
+
+.circle {
+  display: block;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+}
+
+.circle-on  { background: radial-gradient(circle at 5px 5px, #00FF40, #000); }
+.circle-off { background: radial-gradient(circle at 5px 5px, grey, #000); }
+
+thead th {
+  padding-top: 14px !important;
+  padding-bottom: 8px !important;
+  vertical-align: top !important;
+}
+
+td { vertical-align: middle !important; }
+
+.table-score-container {
   margin-bottom: 8px;
 
   -webkit-transition: all 1s ease-in-out 0s;
@@ -13,28 +33,18 @@
 
 .limit-height { max-height: 436px; }
 
-.table { margin-bottom: 0; }
+.table-score-container .table { margin-bottom: 0; }
 
-thead th {
-  padding-top: 14px !important;
-  padding-bottom: 8px !important;
-  vertical-align: top !important;
+.table-score-container th {
   height: 45px;
+  max-height: 45px;
 }
 
-td {
-  vertical-align: middle !important;
+.table-score-container td {
   height: 39px;
+  max-height: 39px;
 }
 
-figure { margin: 1em 40px !important; }
-
-.circle {
-  display: block;
-  border-radius: 50%;
-  height: 15px;
-  width: 15px;
+.table-score-container .account-username {
+  text-transform: lowercase;
 }
-
-.circle-on  { background: radial-gradient(circle at 5px 5px, #00FF40, #000); }
-.circle-off { background: radial-gradient(circle at 5px 5px, grey, #000); }
