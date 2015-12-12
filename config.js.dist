@@ -8,6 +8,10 @@
   /* Edit with path of TC-JSON-API */
   app.api = "../TC-JSON-API/public/index.php/";
 
+  /* Edit with your server name */
   app.serverName = "TrinityCore";
+
+  /* Edit with the amount of resolved ticket you need to show, 0 to hide all */
+  app.showResolvedTicketsCount = 10;
 
 }());

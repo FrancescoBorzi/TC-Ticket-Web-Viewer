@@ -7,14 +7,17 @@
 
   app.controller("StatusController", function($scope, $http) {
 
-    $scope.serverName = app.serverName;
-    $scope.monthDiff  = 0;
-    $scope.monthName  = "this month";
+    $scope.showRecents = false;
+    $scope.showResolvedTicketsCount = app.showResolvedTicketsCount;
+    $scope.serverName  = app.serverName;
+    $scope.monthDiff   = 0;
+    $scope.monthName   = "this month";
 
     var request1 = app.api + "search/tickets?unresolved=1",
         request2 = app.api + "topgm/ticket/account",
         request3 = app.api + "topgm/ticket/character",
         monthRequest = app.api + "topgm/ticket/account/month/",
+        recents = app.api + "ticket/recent/" + app.showResolvedTicketsCount,
         getMonth;
 
     $scope.apiLoaded = true;
@@ -79,6 +82,16 @@
 
       getMonth();
 
+      if (app.showResolvedTicketsCount > 0) {
+        $http.get( recents )
+          .success(function(data, status, header, config) {
+          $scope.recents = data;
+          if (data.length > 0) { $scope.showRecents = true; }
+        })
+          .error(function(data, status, header, config) {
+          console.log("Error while retrieving tickets, API request failed: " + recents);
+        });
+      }
     })
       .error(function(data, status, header, config) {
       $scope.apiLoaded = false;
