@@ -135,8 +135,8 @@
                 <th class="text-center" ts-criteria="description|lowercase">Description</th>
                 <th class="text-center" ts-criteria="createTime|parseInt">Create Time</th>
                 <th class="text-center" ts-criteria="lastModifiedTime|parseInt">Last Modified Time</th>
-                <th class="text-center" ts-criteria="comment|lowercase">Response</th>
-                <th class="text-center" ts-criteria="online|lowercase">Resolved by</th>
+                <th class="text-center" ts-criteria="response|lowercase">Response</th>
+                <th class="text-center" ts-criteria="resolvedByName|lowercase">Resolved by</th>
               </thead>
               <tbody>
                 <tr ng-repeat="ticket in recents" ng-class="ticket.faction" ts-repeat>
