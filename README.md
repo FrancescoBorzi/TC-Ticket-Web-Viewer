@@ -23,5 +23,5 @@ and the name of your server:
 
 ### License
 
-The TrinityCore Ticket Web Viewer is open-sourced software licensed under the [GNU GPL license](https://github.com/ShinDarth/TC-Search-Engine/blob/master/LICENSE).
+The TrinityCore Ticket Web Viewer is open-sourced software licensed under the [GNU AGPL license](https://github.com/ShinDarth/TC-Ticket-Web-Viewer/blob/master/LICENSE).
 
