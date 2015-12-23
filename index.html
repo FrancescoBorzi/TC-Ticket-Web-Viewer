@@ -135,6 +135,7 @@
                 <th class="text-center" ts-criteria="description|lowercase">Description</th>
                 <th class="text-center" ts-criteria="createTime|parseInt">Create Time</th>
                 <th class="text-center" ts-criteria="lastModifiedTime|parseInt">Last Modified Time</th>
+                <th class="text-center" ts-criteria="comment|lowercase">Comment</th>
                 <th class="text-center" ts-criteria="response|lowercase">Response</th>
                 <th class="text-center" ts-criteria="resolvedByName|lowercase">Resolved by</th>
               </thead>
@@ -145,6 +146,7 @@
                   <td>{{ ticket.description }}</td>
                   <td class="text-success">{{ ticket.createTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
                   <td class="text-success">{{ ticket.lastModifiedTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                  <td class="text-muted">{{ ticket.comment }}</td>
                   <td>{{ ticket.response }}</td>
                   <td class="text-warning"><strong>{{ ticket.resolvedByName }}</strong></td>
                 </tr>
