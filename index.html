@@ -51,7 +51,7 @@
               <tbody>
                 <tr ng-repeat="ticket in tickets" ng-class="ticket.faction" ts-repeat>
                   <td class="text-danger"><strong>{{ ticket.id }}</strong></td>
-                  <td class="text-info"><strong>{{ ticket.name }}</strong></td>
+                  <td class="text-info"><small>[{{ ticket.playerGuid }}]</small><br><strong>{{ ticket.name }}</strong><br><small>({{ ticket.playerCurrentName }})</small></td>
                   <td>{{ ticket.description }}</td>
                   <td class="text-success">{{ ticket.createTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
                   <td class="text-success">{{ ticket.lastModifiedTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
@@ -145,7 +145,7 @@
               <tbody>
                 <tr ng-repeat="ticket in recents" ng-class="ticket.faction" ts-repeat>
                   <td class="text-danger"><strong>{{ ticket.id }}</strong></td>
-                  <td class="text-info"><strong>{{ ticket.name }}</strong></td>
+                  <td class="text-info"><small>[{{ ticket.playerGuid }}]</small><br><strong>{{ ticket.name }}</strong><br><small>({{ ticket.playerCurrentName }})</small></td>
                   <td>{{ ticket.description }}</td>
                   <td class="text-success">{{ ticket.createTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
                   <td class="text-success">{{ ticket.lastModifiedTime * 1000  | date:'yyyy-MM-dd HH:mm:ss' }}</td>
