@@ -20,9 +20,18 @@ thead th {
   padding-top: 14px !important;
   padding-bottom: 8px !important;
   vertical-align: top !important;
+
+  max-width: 300px;
+  max-width: 25vw;
 }
 
-td { vertical-align: middle !important; }
+
+td {
+  vertical-align: middle !important;
+  max-width: 300px;
+  max-width: 25vw;
+  word-wrap: break-word;
+}
 
 .gmscores {
    max-width: 1200px;
